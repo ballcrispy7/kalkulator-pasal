@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Pasal Mandalika RP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Kalkulator Pasal Mandalika RP</h1>
+
+  <!-- Toggle Dark Mode -->
+  <label class="theme-switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider"></span>
+  </label>
+</div>
+
+  <div class="filter">
+    <input type="text" id="search" placeholder="Cari pasal...">
+
+    <select id="kategoriFilter">
+      <option value="all">Semua Kategori</option>
+      <option value="Ringan">Ringan</option>
+      <option value="Menengah Umum">Menengah (Umum)</option>
+      <option value="Menengah Minuman">Menengah (Minuman)</option>
+      <option value="Menengah Narkotika">Menengah (Narkotika)</option>
+      <option value="Berat">Berat</option>
+      <option value="Lalu Lintas">Lalu Lintas</option>
+    </select>
+  </div>
+
+  <!-- Rekomendasi Pasal -->
+<div class="recommend-box">
+
+  <h3>🔍 Rekomendasi Pasal</h3>
+
+  <input 
+    type="text" 
+    id="incidentInput"
+    placeholder="Contoh: tabrak orang lalu kabur"
+  >
+
+  <button id="recommendBtn">Cari</button>
+
+  <div id="recommendResult"></div>
+
+</div>
+
+
+  <div id="listPasal"></div>
+
+  <div id="pagination"></div>
+
+  <div class="result">
+
+    <div class="card">
+      <h3>Total Denda</h3>
+      <p>$<span id="totalDenda">0</span></p>
+    </div>
+
+    <div class="card">
+      <h3>Total Penjara</h3>
+      <p><span id="totalJail">0</span> Bulan</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Impound</h3>
+      <p><span id="totalImpound">0</span> Hari</p>
+    </div>
+
+    <div class="card">
+      <h3>Pasal Terpilih</h3>
+      <p><span id="listPasalTerpilih">-</span></p>
+    </div>
+
+    <div class="card">
+      <h3>Ringkasan RP</h3>
+      <p><span id="ringkasanText">-</span></p>
+      <button onclick="copyRingkasan()">📋 Copy /RO</button>
+    </div>
+
+  </div>
+
+  <div class="reset">
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <footer>
+    © 2026 Mandalika RP Police System
+    <br>Developed By Snowden
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

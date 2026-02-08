@@ -1,0 +1,431 @@
+
+:root {
+  --main-bg: #f1f5f9;
+  --main-card: #ffffff;
+  --main-blue: #93c5fd;
+  --main-purple: #c7d2fe;
+  --text-dark: #334155;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff, #f8fafc);
+  margin: 0;
+  padding: 20px;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: var(--main-bg);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #4f46e5;
+}
+
+/* ================= FILTER RESPONSIVE ================= */
+
+.filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Default (PC) */
+.filter input,
+.filter select {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+/* Mode HP */
+@media (max-width: 600px) {
+
+  .filter {
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .filter input,
+  .filter select {
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    height: 32px;
+  }
+
+  .filter input {
+    flex: 1.5;
+  }
+
+  .filter select {
+    flex: 1;
+  }
+}
+
+.pasal {
+  background: var(--main-card);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  border-left: 4px solid var(--main-blue);
+  cursor: pointer;
+}
+
+.pasal:hover {
+  background: #eef2ff;
+}
+
+.kode {
+  font-weight: bold;
+  color: #4338ca;
+}
+
+.kategori {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.harga {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  border-top: 4px solid var(--main-purple);
+}
+
+button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4f46e5;
+}
+
+#pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#pagination button {
+  margin: 3px;
+}
+
+#pagination button.active {
+  background: #4338ca;
+}
+
+.reset {
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+@media (max-width: 600px) {
+  .filter {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ================= MODE THEME ================= */
+
+/* Light Mode (Default) */
+body.light {
+  --bg-main: #f1f5f9;
+  --bg-card: #ffffff;
+  --text-main: #334155;
+  --primary: #6366f1;
+}
+
+/* Dark Mode */
+body.dark {
+  --bg-main: #020617;
+  --bg-card: #0f172a;
+  --text-main: #e5e7eb;
+  --primary: #818cf8;
+}
+
+/* Terapkan Variabel */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.container {
+  background: var(--bg-main);
+}
+
+.card,
+.pasal {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+button {
+  background: var(--primary);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tombol Tema */
+.theme-btn {
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 6px;
+  min-width: auto;
+  white-space: nowrap;
+}
+
+/* Mode HP */
+@media (max-width: 600px) {
+
+  .header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .theme-btn {
+    width: auto;
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+/* ================= TOGGLE THEME ================= */
+
+.theme-switch {
+  position: relative;
+  width: 46px;
+  height: 22px;
+}
+
+/* Hilangkan checkbox asli */
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Background switch */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #c7d2fe;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+/* Bulatan */
+.slider::before {
+  content: "☀️";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  transition: 0.3s;
+}
+
+/* Mode Gelap */
+input:checked + .slider {
+  background: #312e81;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+  content: "🌙";
+}
+
+/* Pagination Mobile */
+
+/* ================= PAGINATION COMPACT ================= */
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* Jangan turun ke bawah */
+  gap: 3px;
+  overflow-x: auto; /* Kalau kepanjangan bisa scroll */
+  padding: 5px 0;
+}
+
+/* Tombol */
+#pagination button {
+  min-width: auto;
+  padding: 2px 6px;
+  font-size: 11px;
+  border-radius: 5px;
+  line-height: 1.2;
+}
+
+/* Angka aktif */
+#pagination button.active {
+  font-weight: 600;
+}
+
+/* Titik-titik */
+#pagination span {
+  font-size: 11px;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+
+/* Hilangkan scrollbar */
+#pagination::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile extra kecil */
+@media (max-width: 480px) {
+
+  #pagination button {
+    padding: 2px 5px;
+    font-size: 10px;
+  }
+
+  #pagination span {
+    font-size: 10px;
+  }
+}
+
+/* ================= REKOMENDASI ================= */
+
+.recommend-box {
+  background: var(--bg-card);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.recommend-box h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.recommend-box input {
+  width: 100%;
+  padding: 7px;
+  font-size: 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.recommend-box button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+#recommendResult {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .recommend-box {
+    padding: 10px;
+  }
+
+  .recommend-box h3 {
+    font-size: 13px;
+  }
+}
+
+/* Tombol Rekomendasi */
+
+.rec-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 3px 7px;
+  font-size: 11px;
+  border-radius: 6px;
+  margin: 2px;
+}
+
+/* ================= SKOR REKOMENDASI ================= */
+
+.rec-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 3px 0;
+}
+
+.rec-score {
+  font-size: 11px;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* ================= HIGHLIGHT PASAL ================= */
+
+.pasal.highlight {
+  animation: blink 0.5s ease-in-out 3;
+  border: 2px solid #22c55e;
+}
+
+@keyframes blink {
+
+  0% { background: #dcfce7; }
+  50% { background: #bbf7d0; }
+  100% { background: var(--bg-card); }
+
+}
